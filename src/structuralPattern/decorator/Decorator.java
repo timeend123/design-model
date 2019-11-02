@@ -5,7 +5,7 @@ package structuralPattern.decorator;
  * @create 2019-10-29 16:27
  * @description 抽象装饰角色
  **/
-public class Decorator implements Component {
+public  class Decorator implements Component {
     private Component component;
 
     public Decorator(Component component) {
