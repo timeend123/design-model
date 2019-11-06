@@ -5,12 +5,18 @@ package behavioralPattern.interpreter;
  * @create 2019-11-04 9:55
  * @description 非终结符表达式类
  **/
-public class NonTerminalExpression implements AbstractExpression {
-    private AbstractExpression expression1;
-    private AbstractExpression expression2;
-    @Override
-    public Object interpret(String info) {
+public class NonTerminalExpression implements Expression {
+    private Expression city;
+    private Expression person;
 
-        return null;
+    public NonTerminalExpression(Expression city, Expression person) {
+        this.city = city;
+        this.person = person;
+    }
+
+    @Override
+    public boolean interpret(String info) {
+        String s[]=info.split("的");
+        return city.interpret(s[0])&&person.interpret(s[1]);
     }
 }

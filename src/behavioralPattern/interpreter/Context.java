@@ -6,11 +6,21 @@ package behavioralPattern.interpreter;
  * @description
  **/
 public class Context {
-    private AbstractExpression expression;
+    private String[] cities={"上海","杭州"};
+    private String[] people={"老人","妇女","儿童"};
+    private Expression cityPerson;
 
     public Context() {
+        Expression city=new TerminalExpression(cities);
+        Expression person=new TerminalExpression(people);
+        cityPerson=new NonTerminalExpression(city,person);
     }
     public void operation(String info){
-        //调用相关表达式类的解释方法
+        boolean ok=cityPerson.interpret(info);
+        if (ok){
+            System.out.println("您是"+info+",您本次乘车免费！");
+        }else {
+            System.out.println(info+",您不是免费人员");
+        }
     }
 }

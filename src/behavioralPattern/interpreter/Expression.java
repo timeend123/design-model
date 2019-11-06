@@ -5,7 +5,7 @@ package behavioralPattern.interpreter;
  * @create 2019-11-04 9:50
  * @description 抽象表达式类
  **/
-public interface AbstractExpression {
+public interface Expression {
     //解释方法
-    public Object interpret(String info);
+    public boolean interpret(String info);
 }

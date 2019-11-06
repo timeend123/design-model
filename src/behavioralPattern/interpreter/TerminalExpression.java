@@ -1,14 +1,27 @@
 package behavioralPattern.interpreter;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * @author liuyuan
  * @create 2019-11-04 9:53
- * @description //终结符表达式类
+ * @description 终结符表达式类
  **/
-public class TerminalExpression implements AbstractExpression {
+public class TerminalExpression implements Expression {
+    private Set<String> set=new HashSet();
+
+    public TerminalExpression(String[] data) {
+        for (int i = 0; i < data.length; i++) {
+            set.add(data[i]);
+        }
+    }
+
     @Override
-    public Object interpret(String info) {
-        //对终结符表达式的处理
-        return null;
+    public boolean interpret(String info) {
+        if (set.contains(info)){
+            return true;
+        }
+        return false;
     }
 }
