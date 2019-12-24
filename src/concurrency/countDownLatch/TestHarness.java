@@ -1,4 +1,4 @@
-package concurrency.harness;
+package concurrency.countDownLatch;
 
 import java.util.concurrent.CountDownLatch;
 
