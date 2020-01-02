@@ -38,7 +38,10 @@ public class Test {
     public static void main(String[] args) {
         Test test=new Test();
         test.thread1.start();
+        Thread.yield();
         test.thread2.start();
+        Thread.yield();
         test.Thread3.start();
+        Thread.yield();
     }
 }
