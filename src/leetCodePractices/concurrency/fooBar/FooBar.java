@@ -1,4 +1,4 @@
-package leetCodePractices.concurrency;
+package leetCodePractices.concurrency.fooBar;
 
 /**
  * @author liuyuan

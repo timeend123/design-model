@@ -1,4 +1,4 @@
-package leetCodePractices.concurrency;
+package leetCodePractices.concurrency.zeroEvenOdd;
 
 import java.util.function.IntConsumer;
 
@@ -7,8 +7,8 @@ import java.util.function.IntConsumer;
  * @create 2019-11-24 19:58
  * @description
  **/
-public class Test {
-    ZeroEvenOdd zeroEvenOdd=new ZeroEvenOdd(2);
+public class TestZeroEvenOdd {
+    ZeroEvenOdd zeroEvenOdd=new ZeroEvenOdd(10);
     IntConsumer printNumber= value -> System.out.println(value);
     //输出0
     Thread thread1= new Thread(() -> {
@@ -36,7 +36,7 @@ public class Test {
     });
 
     public static void main(String[] args) {
-        Test test=new Test();
+        TestZeroEvenOdd test=new TestZeroEvenOdd();
         test.thread1.start();
         Thread.yield();
         test.thread2.start();
