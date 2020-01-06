@@ -6,7 +6,7 @@ package leetCodePractices.concurrency.diningPhilosophers;
  * @description
  **/
 public class TestDiningPhilosophers {
-    private static DiningPhilosophers diningPhilosophers=new DiningPhilosophers(1);
+    private static DiningPhilosophers diningPhilosophers=new DiningPhilosophers();
     public static void main(String[] args) {
         Thread p0=new Thread(() -> {
             try {
