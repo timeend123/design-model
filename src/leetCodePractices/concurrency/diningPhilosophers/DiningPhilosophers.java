@@ -29,14 +29,18 @@ class DiningPhilosophers {
         int leftFork = (philosopher + 1) % 5;
         while (true) {
             if (semaphores[leftFork].tryAcquire()) {//尝试获取左边的叉子
-                if (semaphores[rightFork].tryAcquire()) {//尝试获取右边的叉子
+                if (semaphores[rightFork].tryAcquire()) {//左边的叉子获取到后，尝试获取右边的叉子
+                    //两个叉子都获取到了，则拿起两个叉子，开始进食
                     pickLeftFork.run();
                     pickRightFork.run();
                     eat.run();
+                    //吃完，放下左边的叉子，左边叉子空闲
                     putLeftFork.run();
                     semaphores[leftFork].release();
+                    //放下右边叉子，右边叉子空闲
                     putRightFork.run();
                     semaphores[rightFork].release();
+                    //退出循环，线程结束
                     break;
                 } else {//如果只拿到了左边的叉子
                     semaphores[leftFork].release();
