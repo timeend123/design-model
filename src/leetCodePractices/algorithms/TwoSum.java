@@ -3,9 +3,9 @@ package leetCodePractices.algorithms;
 /**
  * @author liuyuan
  * @create 2019-11-24 16:18
- * @description
+ * @description 两数之和
  **/
-public class Test {
+public class TwoSum {
     public int[] twoSum(int[] nums, int target) {
         int[] result=new int[2];
         for(int i=0;i<nums.length;i++){
@@ -26,7 +26,7 @@ public class Test {
     public static void main(String[] args) {
         int[] arr={2, 7, 11, 15};
         int target=9;
-        int[] result=new Test().twoSum(arr,target);
+        int[] result=new TwoSum().twoSum(arr,target);
         System.out.println(result[0]+"---"+result[1]);
     }
 }
